@@ -317,7 +317,9 @@ def visualize(
                 test_err = sol_res.check_test(num)
                 err_msg = ""
                 if test_err is not None:
-                    err_msg = color_settings.colored(f" should result {test_err}", "red")
+                    err_msg = color_settings.colored(
+                        f" should result {test_err}", "red"
+                    )
                     wrong_solutions[sol] = True
 
                 print(tab(f"{config.test_sections[num].name}{err_msg}"))
@@ -330,7 +332,9 @@ def visualize(
             sol_errs = sol_res.check_all()
             err_msg = ""
             if sol_errs:
-                err_msg = color_settings.colored(f" should {', '.join(sol_errs)}", "red")
+                err_msg = color_settings.colored(
+                    f" should {', '.join(sol_errs)}", "red"
+                )
                 wrong_solutions[sol] = True
             print(f"{sol}{err_msg}")
 
